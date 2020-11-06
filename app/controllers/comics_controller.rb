@@ -2,12 +2,12 @@ class ComicsController < ApplicationController
 
   # GET: /comics
   get "/comics" do
-    erb :"/comics/index.html"
+    erb :"/comics/index"
   end
 
   # GET: /comics/new
   get "/comics/new" do
-    erb :"/comics/new.html"
+    erb :"/comics/new"
   end
 
   # POST: /comics
@@ -17,12 +17,12 @@ class ComicsController < ApplicationController
 
   # GET: /comics/5
   get "/comics/:id" do
-    erb :"/comics/show.html"
+    erb :"/comics/show"
   end
 
   # GET: /comics/5/edit
   get "/comics/:id/edit" do
-    erb :"/comics/edit.html"
+    erb :"/comics/edit"
   end
 
   # PATCH: /comics/5
