@@ -17,9 +17,13 @@ class UsersController < ApplicationController
     redirect "/users/login"
   end
 
-  get '/login' do
+  get "/login" do
     erb :"/users/login"
   end
+
+  post "/login" do 
+    erb:"/users/show"
+  end 
 
   # GET: /users/5
   get "/users/:id" do
