@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   post "/users" do
     @user = User.create(params)
     session[:user_id] = @user.id
-    redirect "/users/login"
+    redirect "/login"
   end
 
   get "/login" do
@@ -22,6 +22,8 @@ class UsersController < ApplicationController
   end
 
   post "/login" do 
+    @user = User.create(params)
+    session[:user_id] = @user.id    
     erb:"/users/show"
   end 
 
