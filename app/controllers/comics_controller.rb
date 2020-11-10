@@ -2,7 +2,8 @@ class ComicsController < ApplicationController
 
   # GET: /comics
   get "/comics" do
-    erb :"/comics/index"
+    @comics = current_user.comic
+      erb :"/comics/index"
   end
 
   # GET: /comics/new
