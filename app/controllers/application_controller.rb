@@ -24,11 +24,12 @@ class ApplicationController < Sinatra::Base
     end 
 
     def current_user
-      @current_user ||= User.find_by(id: session[:user_id])
+      @current_user ||= User.find_by(session[:user_id]) if session[:user_id]
     end 
 
     def redirect_if_not_logged_in
       if !logged_in?
+        session[:error] = "Please log in to view this story"
       redirect '/login'
       end 
     end 
