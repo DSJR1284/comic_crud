@@ -22,9 +22,7 @@ class ComicsController < ApplicationController
         erb :"/comics/show"
       end
        # POST: /comics
-      post "/comics" do
-
-   
+      post "/comics" do  
       end
 
   # GET: /comics/5/edit
