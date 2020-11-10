@@ -1,21 +1,21 @@
 class UsersController < ApplicationController
 
-  # GET: /users
-  get "/users" do
-    erb :"/users/index"
-  end
+  # # GET: /users
+  # get "/users" do
+  #   erb :"/users/index"
+  # end
 
   # GET: /users/new
   get "/new" do
     erb :"/users/new"
   end
 
-  # POST: /users
-  post "/users" do
-    @user = User.create(params)
-    session[:user_id] = @user.id
-    redirect "/login"
-  end
+  # # POST: /users
+  # post "/users" do
+  #   @user = User.create(params)
+  #   session[:user_id] = @user.id
+  #   redirect "/login"
+  # end
 
   get "/login" do
     erb :"/users/login"
