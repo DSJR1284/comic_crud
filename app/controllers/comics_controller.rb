@@ -3,8 +3,12 @@ class ComicsController < ApplicationController
   # GET: /comics
   get "/comics" do
     @comics = current_user.comics
-      erb :"/index"
+      erb :"comics/index"
   end
+
+    # GET: /comics/5
+    get "/comics/:id" do      
+     end
 
   # GET: /comics/new
   get "/comics/new" do
@@ -16,10 +20,7 @@ class ComicsController < ApplicationController
     redirect "/comics"
   end
 
-  # GET: /comics/5
-  get "/comics/:id" do
-   "test"
-  end
+
 
   # GET: /comics/5/edit
   get "/comics/:id/edit" do
@@ -35,4 +36,5 @@ class ComicsController < ApplicationController
   delete "/comics/:id/delete" do
     redirect "/comics"
   end
+
 end

@@ -1,3 +1,9 @@
 <h1>Comic Hub</h1>
 
+<% @comics.each do |comic| %>
+ <h4><a href="/comcis/<%= comic.id%>"><%= comic.title %></a><h4>
+ <img src="<%= comic.image_url %>">
+ <strong><%= comic.blurb%></strong>
+ <% end %>
+
 
