@@ -1,8 +1,9 @@
-<h1>This is the show page for an individual instance of your model.</h1>
-
-<% @comics.each do |comic| %>
- <h4><a href="/comcis/<%= comic.id%>"><%= comic.title %></a><h4>
- <img src="<%= comic.image_url %>">
- <strong><%= comic.blurb%></strong>
- <% end %>
+<h1><%= @comics.title%></h1>
+<br>
+<img src="<%= @comics.image_url %>" alt="<%= @comics.title %>" height="150" width="150">
+<br>
+<h2><%= @comics.blurb %></h2>
+<h4><%= @comics.user.username%></h4>
+<br>
+<br>
 

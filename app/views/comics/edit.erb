@@ -1,1 +1,12 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit Story</h1>
+
+<form class="" action="/comics/<%= @comics.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label for="title">Title:</label>
+  <input type="text" name="title" value ="<%= @post.title %>">
+  <label for="description">Blurb:</label>
+  <textarea name="blurb" style="width:auto; height:auto;"><%= @comic.blurb %></textarea>
+  <label for="image_url">Image URL:</label>
+  <input type="text" name="image_url" value ="<%= @comic.image_url %>">
+  <input type="submit" name="" value="Edit Story">
+</form>
