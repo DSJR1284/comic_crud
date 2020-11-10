@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
-  # GET: /users/new
+  
   get "/new" do
     erb :"/users/new"
   end
 
-  # POST: /users
+  
   post "/new" do
     @user = User.create(params)
     session[:user_id] = @user.id
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     end  
   end 
 
-  # GET: /users/5
+  
   get "/users/:id" do
     @user = User.find_by(id: params[:id])      
     erb :"users/show"

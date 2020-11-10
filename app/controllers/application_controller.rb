@@ -29,8 +29,8 @@ class ApplicationController < Sinatra::Base
 
     def redirect_if_not_logged_in
       if !logged_in?
-        session[:error] = "Please log in to view this story"
-      redirect '/login'
+           session[:error] = "Please log in to view this story"
+          redirect '/login'
       end 
     end 
 
