@@ -1,35 +1,40 @@
 class UsersController < ApplicationController
 
-  # # GET: /users
-  # get "/users" do
-  #   erb :"/users/index"
-  # end
+  # GET: /users
+  get "/users" do
+    erb :"/users/index"
+  end
 
   # GET: /users/new
   get "/new" do
     erb :"/users/new"
   end
 
-  # # POST: /users
-  # post "/users" do
-  #   @user = User.create(params)
-  #   session[:user_id] = @user.id
-  #   redirect "/login"
-  # end
+  # POST: /users
+  post "/new" do
+    @user = User.create(params)
+    session[:user_id] = @user.id
+    redirect "/login"
+  end
 
   get "/login" do
     erb :"/users/login"
   end
 
   post "/login" do 
-    @user = User.create(params)
-    session[:user_id] = @user.id    
-    erb:"/users/show"
+   user = User.find_by(username: params[:username])
+   if user && user.authenticate(params[:password])
+     session[:user_id] = user.id
+     redirect "/users/#{user.id}"
+   else 
+     redirect "/login"
+    end  
   end 
 
   # GET: /users/5
   get "/users/:id" do
-    erb :"/users/show"
+    @user = User.find_by(id: params[:id])
+    erb :"users/show"
   end
 
   # GET: /users/5/edit

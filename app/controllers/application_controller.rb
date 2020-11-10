@@ -7,10 +7,32 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :session
     set :session_secret, "everyonehasastory"
-  end
+    end
 
   get "/" do
+    if logged_in?
+      redirect "/users/#{current_user.id}"
+    else 
       erb :welcome
+    end 
+  end 
+
+  helpers do 
+    
+    def logged_in?
+      !!current_user
+    end 
+
+    def current_user
+      @current_user ||= User.find_by(id: session[:user_id])
+    end 
+
+    def redirect_if_not_logged_in
+      if !logged_in?
+      redirect '/login'
+      end 
+    end 
+
   end 
   
 end 
