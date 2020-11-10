@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   
+
   # GET: /users/new
   get "/new" do
     erb :"/users/new"
@@ -16,9 +16,9 @@ class UsersController < ApplicationController
     erb :"/users/login"
   end
 
-  post "/login" do 
+  post "/login" do  
    @user = User.find_by(username: params[:username])
-   if @user && @user.authenticate(params[:password])
+   if @user && @user.authenticate(params[:password])    
      session[:user_id] = @user.id
      redirect "/users/#{@user.id}"
    else 
