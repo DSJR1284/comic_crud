@@ -1,3 +1,6 @@
+#Seeds data preloaded data to test out our application. 
+#To check if seed data is working use tux. 
+
 shade = User.create(username: "The Shade2430", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeA7QIh9gwG8WFjRzlrAAJQRUEEqoVaSw7Kg&usqp=CAU", bio: "There's only one shot", password: "shade2430")
 
 kid = User.create(username: "Kid0330", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQHeEnfbSTCxfTi6eymvPheJFERdc97nAAYSw&usqp=CAU", bio: "This is the way", password: "kid0330")

@@ -21,11 +21,13 @@
 
          <div class="nav">
            <% if logged_in? %>
-          <form action="/comics" method="post">
-               <input type="submit" value="Home">
-            </form>  
           <br>
           <br>
+            <%# <form action="/users/<%= @user.id %>" method="get"> %>
+               <%# <h3><input type="submit" value="Home"></h3> %>
+            <%# </form>              %>
+            <br>
+            <br>
             <form action="/comics" method="get">
                <h3><input type="submit" value="Comic Libaray"></h3>
             </form>             

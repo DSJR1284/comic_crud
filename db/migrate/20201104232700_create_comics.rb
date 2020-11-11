@@ -4,7 +4,7 @@ class CreateComics < ActiveRecord::Migration
       t.string :title
       t.string :image_url
       t.text :blurb
-      t.integer :user_id
+      t.integer :user_id #foreign key to set up belongs to relationship with user. 
       t.timestamps null: false
     end
   end

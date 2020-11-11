@@ -1,16 +1,22 @@
 class UsersController < ApplicationController
 
+  #Routes match web request sent by a user to code in out application 
+  #tells the app what data to send back to the user. 
   
   get "/new" do
     erb :"/users/new"
   end
   
   post "/new" do
-    @user = User.create(params)
-    session[:user_id] = @user.id
-    redirect "/login"
+    if params[:username] == "" || params[:password] == ""
+      redirct "/users/new"
+    else
+     @user = User.create(params)
+     session[:user_id] = @user.id
+     redirect "/login"
+    end 
   end
-
+  
   get "/login" do
     erb :"/users/login"
   end
@@ -26,10 +32,14 @@ class UsersController < ApplicationController
   end 
   
   get "/users/:id" do
-    @user = User.find_by(id: params[:id])      
+    if logged_in?
+    @user = User.find(params[:id])      
     erb :"users/show"
-  end
-  
+    else
+     redirect '/'        
+    end
+  end 
+
   get '/logout' do  
     session.clear   
     redirect '/'
