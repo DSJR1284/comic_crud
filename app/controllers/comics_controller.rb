@@ -14,8 +14,7 @@ class ComicsController < ApplicationController
   get "/comics/new" do
       erb :"/comics/new"
   end  
-
-        
+          
   get "/comics/:id" do 
      @comics = Comic.find(params[:id])
       erb :"/comics/show"

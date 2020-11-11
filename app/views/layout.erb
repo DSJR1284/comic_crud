@@ -21,13 +21,24 @@
 
          <div class="nav">
            <% if logged_in? %>
-             <a href="/comics">Comic Libaray</a>
+          <form action="/comics" method="post">
+               <input type="submit" value="Home">
+            </form>  
+          <br>
+          <br>
+            <form action="/comics" method="get">
+               <h3><input type="submit" value="Comic Libaray"></h3>
+            </form>             
               <br>
               <br>
-              <a href="/comics/new">Comic Lab</a>
+              <form action="/comics/new" method="get">
+                 <input type="submit" value="Comic Lab">
+              </form>
               <br>
               <br>
-              <a href="/logout">Log Out</a>
+              <form action="/logout" method="get">
+                  <input type="submit" value="Log Out">
+              </form>
             <% end %>
          </div>
      
