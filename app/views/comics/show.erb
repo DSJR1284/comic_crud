@@ -5,10 +5,16 @@
 <h2><%= @comics.blurb %></h2>
 <h4><%= @comics.user.username%></h4>
 <br>
- <a href="/comics/<%= @comics.id %>/edit">Rewrite Story</a>
+<form method="get" action="/comics/<%= @comics.id %>">
+    <input type="submit" value="Rewrite Story">
+</form>
+<br>
+<form method="post" action="/comics/<%= @comics.id %>/delete" >
+ <input type="hidden" id="hidden" name="_method" value="DELETE">
+ <input type="submit" value="Remove Story">
+</form>
  <br>
  <br>
- <a href="delete/comics/<%= @comics.id %>/delete">Remove Story</a>
- <br>
- <br>
+
+ 
  

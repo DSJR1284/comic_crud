@@ -33,16 +33,17 @@ class ComicsController < ApplicationController
 
   # PATCH: /comics/5
   patch "/comics/:id" do
-    find_comic
+    @comcis = Comic.find(param[:id])
     @comics.update(title: params[:title], image_url: params[:image_url], blurb: params[:blurb])
     redirect "/comics/#{@comics.id}"
   end
 
+
     # DELETE: /comics/5/delete
     delete "/comics/:id/delete" do
-      "test"
-    end
-
-  
+      @comics = Comic.find(params[:id])
+      @comics.destroy
+      redirect "/comics"
+    end  
 
 end
