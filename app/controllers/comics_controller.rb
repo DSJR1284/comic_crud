@@ -23,21 +23,26 @@ class ComicsController < ApplicationController
       end
        # POST: /comics
       post "/comics" do  
-      end
+      end  
 
-  # GET: /comics/5/edit
-  get "/comics/:id/edit" do
- 
-  end
+       # GET: /comics/5/edit
+       get "/comics/:id/edit" do
+          @comics = Comic.find(params[:id])
+         erb :"/comics/edit"
+       end
 
   # PATCH: /comics/5
   patch "/comics/:id" do
-    redirect "/comics/:id"
+    find_comic
+    @comics.update(title: params[:title], image_url: params[:image_url], blurb: params[:blurb])
+    redirect "/comics/#{@comics.id}"
   end
 
-  # DELETE: /comics/5/delete
-  delete "/comics/:id/delete" do
+    # DELETE: /comics/5/delete
+    delete "/comics/:id/delete" do
+      "test"
+    end
+
   
-  end
 
 end
