@@ -25,7 +25,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[DSJR1
 
 License
 
-The gem is available as open source under the terms of the MIT License.
+The application is available as open source under the terms of the MIT License.
 
 Code of Conduct
 
