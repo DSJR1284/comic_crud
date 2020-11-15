@@ -5,6 +5,6 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use Rack::MethodOverride  
-run ApplicationController #mounting the controllers. 
+run ApplicationController
 use ComicsController
 use UsersController
