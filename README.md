@@ -1,4 +1,5 @@
-AnimeFilms
+Comic Crud 
+
 Welcome to your Comic Crud In this directory, you'll find the instruction to use the comic crud application to begin telling your story. 
 
 Installation
